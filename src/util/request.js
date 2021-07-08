@@ -21,6 +21,9 @@ async function getCepResquest(address) {
     try {
         const {uf,cidade,logradouro} = address;
         const responseCep = await fetch(`${apiUrl}${uf}/${cidade}/${logradouro}/json`);
+        
+        if(responseCep.status !== 200) return ''
+        
         const cepJSON = await responseCep.json();
         
         if(!cepJSON) {
