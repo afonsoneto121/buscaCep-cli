@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "commander": "^8.0.0",
+    "esm": "^3.2.25",
+    "node-fetch": "^2.6.1"
+  },
+  "name": "buscacep-cli",
+  "description": "Exemplo de uma CLI em Node para busar o endereço a partir do CEP",
+  "version": "1.0.0",
+  "preferGlobal": true,
+  "bin": {
+    "clima": "./bin/clima"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Afonso Neto",
+  "license": "MIT"
+}
