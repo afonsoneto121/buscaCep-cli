@@ -30,12 +30,11 @@ async function getAddress(cepNumber) {
 
 async function getCep(addressName) {
     try {
-        const uf = addressName.pop();
-        const cidade = addressName.pop();
-        const logradouro = addressName.toString().replace(',',' ');
-
-        const listCep = await getCepResquest({'uf':uf,'cidade':cidade,'logradouro':logradouro})
-        
+        if(addressName.length !== 3) {
+            console.log('Use \'-\' para separar o endereço ---> Logradouro-Cidade-UF <---')
+            return
+        }
+        const listCep = await getCepResquest(addressName)
         listCep.forEach(i => {
             console.log (`
                 cep: ${i.cep}
@@ -45,8 +44,8 @@ async function getCep(addressName) {
                 localidade: ${i.localidade}
                 uf: ${i.uf}`)
         })
-        if(listCep.length ===0)
-            console.log('Endereço no formato -- Logradouro Cidade UF --')
+        if(listCep.length === 0)
+            console.log('Endereço não encontrado')
     }    catch(err) {
 
     }
