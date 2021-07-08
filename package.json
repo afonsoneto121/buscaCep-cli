@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "preferGlobal": true,
   "bin": {
-    "clima": "./bin/clima"
+    "cep": "./bin/cep"
   },
   "files": [
     "bin",
